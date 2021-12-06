@@ -1,0 +1,26 @@
+body {
+  padding-top: 2rem;
+  background: #eee;
+}
+
+[data-tootik][data-tootik-conf*=left] {
+  cursor: help;
+}
+[data-tootik][data-tootik-conf*=left]::before {
+  border-left-color: #5bc0de;
+}
+[data-tootik][data-tootik-conf*=left]::after {
+  background: #5bc0de;
+}
+
+.d2h-file-wrapper {
+  background: white;
+}
+
+.d2h-file-list-header, .d2h-tag {
+  display: none;
+}
+
+.card {
+  margin-bottom: 0;
+}
