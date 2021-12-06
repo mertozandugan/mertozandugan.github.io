@@ -1,1 +1,97 @@
-test
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - GitHub-Style Text/Code Comparison</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/github.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/tootik@1.0.2/css/tootik.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <form>
+        <div class="form-group row">
+          <label class="col-xs-6 col-form-label" data-tootik="The format of the output data: &#39;side by side&#39; or &#39;line by line&#39;, a.k.a. &#39;split&#39; or &#39;unified&#39; respectively" data-tootik-conf="left multiline" for="outputFormat">Output format</label>
+          <div class="col-xs-6">
+            <select class="custom-select" id="outputFormat">
+              <option value="line-by-line">
+                Line by line
+              </option>
+              <option selected="selected" value="side-by-side">
+                Side by side
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row" id="syncScrollLabel">
+          <div class="col-xs-6" data-tootik="Whether to scroll both panes in side by side mode" data-tootik-conf="left multiline">
+            <span class="custom-control-description">Sync scroll</span>
+          </div>
+          <div class="col-xs-6">
+            <label class="col-form-label custom-control custom-checkbox"><input checked="checked" class="custom-control-input" id="syncScroll" type="checkbox" /><span class="custom-control-indicator"></span></label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-6 col-form-label" data-tootik="The matching level: &#39;lines&#39; for matching lines, &#39;words&#39; for matching lines and words or &#39;none&#39;" data-tootik-conf="left multiline" for="matchingType">Matching type</label>
+          <div class="col-xs-6">
+            <select class="custom-select" id="matchingType">
+              <option value="lines">
+                Lines
+              </option>
+              <option selected="selected" value="words">
+                Words
+              </option>
+              <option value="none">
+                None
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-6 col-form-label" data-tootik="How many lines of context should be included" data-tootik-conf="left multiline" for="contextLines">Context lines</label>
+          <div class="col-xs-6">
+            <input class="form-control" id="contextLines" min="0" type="number" value="3" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-6 col-form-label" data-tootik="The similarity threshold for word matching" data-tootik-conf="left multiline" for="contextLines">Word threshold</label>
+          <div class="col-xs-6">
+            <input class="form-control" id="wordThreshold" max="1" min="0" step="0.05" type="number" value="0.25" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-6 col-form-label" data-tootik="Perform at most this many comparisons for line matching a block of changes" data-tootik-conf="left multiline" for="contextLines">Max comparisons</label>
+          <div class="col-xs-6">
+            <input class="form-control" id="maxComparisons" min="0" step="100" type="number" value="2500" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-4">
+      <label for="original"><strong>Original text</strong></label><textarea class="form-control" id="original" rows="10"></textarea>
+    </div>
+    <div class="col-xs-4">
+      <label for="modified"><strong>Modified text</strong></label><textarea class="form-control" id="modified" rows="10"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12" id="diff"></div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/scala.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jsdiff/3.2.0/diff.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
